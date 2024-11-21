@@ -15,8 +15,8 @@ public class FileParserController {
     private final FileParserService fileParserService;
 
     @GetMapping("/parse")
-    public void parse(@RequestParam String fileType) {
+    public String parse(@RequestParam String fileType) {
         File file = new File("file.txt");
-        fileParserService.parse(file, fileType);
+        return fileParserService.parse(file, fileType);
     }
 }

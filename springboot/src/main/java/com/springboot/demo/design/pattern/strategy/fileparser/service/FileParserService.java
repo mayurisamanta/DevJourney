@@ -13,8 +13,8 @@ public class FileParserService {
 
     private final FileParserFactory fileParserFactory;
 
-    public void parse(File file, String fileType) {
+    public String parse(File file, String fileType) {
         FileParser fileParser = fileParserFactory.get(fileType);
-        fileParser.parse(file);
+        return fileParser.parse(file);
     }
 }
